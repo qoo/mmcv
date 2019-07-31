@@ -154,7 +154,8 @@ def load_checkpoint(model,
     else:
         if not osp.isfile(filename):
             raise IOError('{} is not a checkpoint file'.format(filename))
-        checkpoint = torch.load(filename, map_location=lambda storage, loc: storage) 
+        checkpoint = torch.load(filename, map_location=lambda storage, loc: storage)
+        print("checkpoint = torch.load(filename, map_location=lambda storage, loc: storage) ")
     # get state_dict from checkpoint
     if isinstance(checkpoint, OrderedDict):
         state_dict = checkpoint
